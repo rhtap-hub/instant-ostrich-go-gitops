@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: instant-ostrich-go-gitops
+  description: This is GitOps manifest for instant-ostrich-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: instant-ostrich-go
+    janus-idp.io/tekton: instant-ostrich-go 
+    backstage.io/kubernetes-id: instant-ostrich-go 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:instant-ostrich-go
